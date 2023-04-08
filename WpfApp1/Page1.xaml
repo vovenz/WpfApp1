@@ -16,16 +16,16 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" Height="50">
-            <Button Content="Добавить" Margin="5" Click="AddProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" />
-            <Button Content="Редактировать" Margin="5" Click="EditProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" />
-            <Button Content="Удалить" Margin="5" Click="RemoveProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE"/>
-            <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE"/>
-            <Button x:Name="exit" Content="Выход" Click="Button_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE"/>
-            <Image Source="/Images/user.png" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="470,0,0,0" Height="40"/>
+            <Button Content="Добавить" Margin="5" Click="AddProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" />
+            <Button Content="Редактировать" Margin="5" Click="EditProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" />
+            <Button Content="Удалить" Margin="5" Click="RemoveProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
+            <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
+            <Button x:Name="exit" Content="Выход" Click="Button_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
+            <Image Source="/Images/user.png" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="330,0,0,0" Height="40"/>
             <TextBlock Text="Профиль" Height="31" Foreground="#FF2766CE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,0,0"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5" Background="#FF4E4A4A">
+        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5" Background="#FF4E4A4A" FontSize="20">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" />

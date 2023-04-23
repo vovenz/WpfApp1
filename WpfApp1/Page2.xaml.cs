@@ -83,5 +83,61 @@ namespace WpfApp1
                 myConnection.Close();
             }
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            string login = txtLogin.Text;
+            string password = txtPassword.Text;
+            string root = txtRoot.Text;
+            string myConnectionString = @"server=WILLIAM;Trusted_Connection=Yes;DataBase=Database;";
+
+            using (SqlConnection connection = new SqlConnection(myConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[users] ([login], [password], [root]) VALUES (@login, @password, @root)", connection);
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@root", root);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            string login = txtLogin.Text;
+            string password = txtPassword.Text;
+            string root = txtRoot.Text;
+            string myConnectionString = @"server=WILLIAM;Trusted_Connection=Yes;DataBase=Database;";
+
+            using (SqlConnection connection = new SqlConnection(myConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[users] SET [password] = @password, [root] = @root WHERE [login] = @login", connection);
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@root", root);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            string login = txtLogin.Text;
+            string myConnectionString = @"server=WILLIAM;Trusted_Connection=Yes;DataBase=Database;";
+
+            using (SqlConnection connection = new SqlConnection(myConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[users] WHERE [login] = @login", connection);
+                command.Parameters.AddWithValue("@login", login);
+
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

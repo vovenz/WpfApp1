@@ -15,21 +15,21 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" Height="50">
-            <Button Content="Добавить" Margin="5" Click="AddProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" />
-            <Button Content="Редактировать" Margin="5" Click="EditProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" />
-            <Button Content="Удалить" Margin="5" Click="RemoveProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
-            <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
-            <Button x:Name="exit" Content="Выход" Click="Button_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"/>
-            <Image Source="/Images/user.png" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="330,0,0,0" Height="40"/>
-            <TextBlock Text="Профиль" Height="31" Foreground="#FF2766CE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-170,0,0,0"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" Height="50" Background="#FF2766CE">
+            <Button Content="Добавить" Margin="5" Click="AddProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" Foreground="#FF2766CE" />
+            <Button Content="Редактировать" Margin="5" Click="EditProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" Foreground="#FF2766CE" />
+            <Button Content="Удалить" Margin="5" Click="RemoveProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" Foreground="#FF2766CE"/>
+            <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" Margin="5,5,5,5" Foreground="#FF2766CE"/>
+            <Button x:Name="exit" Content="Выход" Click="Button_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20" Margin="5,5,5,5" Foreground="#FF2766CE"/>
+            <Image Source="/Images/user.png" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,0,0,0" Height="40"/>
+            <TextBlock Text="Профиль" Height="30" Foreground="#FF2766CE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-185,0,0,0" Background="#FF4E4A4A" FontSize="20" FontWeight="Bold"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5" Background="#FF4E4A4A" FontSize="20">
+        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5,5,0,5" FontSize="20" HorizontalAlignment="Left" Width="1070" Background="{x:Null}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" />
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -54,6 +54,6 @@
                 <Button Content="Отмена" Margin="5" Click="CancelProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" />
             </StackPanel>
         </StackPanel>
-        
+
     </Grid>
 </Page>

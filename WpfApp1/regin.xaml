@@ -9,20 +9,20 @@
       Title="regin">
 
     <Grid Height="645" Margin="0,-11,0,0">
-        <Rectangle Margin="100,-65,100,0" RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="#FF2766CE" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="500"/>
-        <TextBox x:Name="textBox_login" Margin="354,20,242,491" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30"/>
-        <PasswordBox x:Name="password_box" Margin="354,195,242,327" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30"/>
-        <PasswordBox x:Name="password_Copy" Margin="354,355,242,159" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30"/>
+        <Rectangle Fill="#FF2766CE" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="520" Margin="0,-45,0,0"/>
+        <TextBox x:Name="textBox_login" Margin="354,20,242,491" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF"/>
+        <PasswordBox x:Name="password_box" Margin="354,195,242,327" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF"/>
+        <PasswordBox x:Name="password_Copy" Margin="354,355,242,159" Background="#FFD8E5FF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="470" Height="30" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF"/>
         <Rectangle Margin="0,350,-110,20" RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="#FFFBFBFB" Width="480" Height="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Rectangle Margin="305,15,540,545" RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="25"/>
-        <Rectangle Margin="325,345,544,213" RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
-        <Rectangle Margin="325,185,544,375" RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="135" Height="25"/>
-        <Label Content="Введите логин:" Margin="305,15,540,545" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="120"/>
-        <Label Content="Введите пароль:" Margin="310,184,540,375" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Content="Повторите пароль:" Margin="335,345,544,213" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="25" Margin="-195,-530,0,0"/>
+        <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="165" Height="25" Margin="-190,-190,0,0"/>
+        <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="195" Height="25" Margin="-165,140,0,0"/>
+        <Label Content="Введите логин:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="145" Margin="-200,-540,0,0"/>
+        <Label Content="Введите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="30" Margin="-194,-200,0,0"/>
+        <Label Content="Повторите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-170,135,0,0" Width="182" Height="31"/>
         <Button x:Name="reg" Click="reg_Click" Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-210,330,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"></Button>
         <Button x:Name="back" Click="back_Click" Content="Отмена" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="465,330,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"></Button>
         <Button x:Name="change_theme" Content="Поменять тему" Background="#FF4E4A4A" Width="175" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="145,330,0,0" FontSize="20" Click="change_theme_Click"></Button>
-        <Image Source="/Images/warehouse.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="120,0,0,0"/>
+        <Image Source="/Images/warehouse.png" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-600,-100,0,0"/>
     </Grid>
 </Page>

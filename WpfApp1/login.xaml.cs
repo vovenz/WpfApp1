@@ -116,10 +116,6 @@ namespace WpfApp1
 
         }
 
-        private void textBox_login_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
         private void change_theme_Click(object sender, RoutedEventArgs e)
         {
             BrushConverter converter = new BrushConverter();

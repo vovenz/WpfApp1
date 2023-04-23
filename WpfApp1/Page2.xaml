@@ -10,7 +10,7 @@
 
     <Grid Height="645" Width="1080" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="800" Margin="0,-390,0,0">
-            <Menu Height="50" Width="800" Background="#FFC8C8C8" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Menu Height="50" Width="800" Background="#FFC8C8C8" HorizontalAlignment="Center">
                 <MenuItem Header="Справочники">
                     <MenuItem Header="Базовый каталог товаров" >
                         <MenuItem Header="Товары"/>
@@ -21,9 +21,7 @@
                             <MenuItem Header="Генератор URL(ЧПУ)"/>
                             <MenuItem Header="Генератор SEO текстов"/>
                         </MenuItem>
-
                     </MenuItem>
-
                     <MenuItem Header="Обработка прайс-листов">
                         <MenuItem Header="Список прайс-листов"/>
                         <MenuItem Header="Правила игнорирования"/>
@@ -31,18 +29,11 @@
                         <MenuItem Header="Сравнение товаров"/>
                         <MenuItem Header="Распределение по категориям"/>
                         <MenuItem Header="Настройка наценки"/>
-
                     </MenuItem>
                     <MenuItem Header="Контрагенты">
                         <MenuItem Header="Список контрагентов"/>
                         <MenuItem Header="Группа контрагентов"/>
                         <MenuItem Header="Коммуникации (Общение, поддержка)"/>
-                    </MenuItem>
-                    <MenuItem Header="Категории"/>
-                    <MenuItem Header="Валюты и курсы"/>
-                    <MenuItem Header="Операции с данными">
-                        <MenuItem Header="Загрузка данных"/>
-                        <MenuItem Header="Выгрузка данных"/>
                     </MenuItem>
                     <MenuItem Header="Производители"/>
                     <MenuItem Header="Статусы наличия"/>
@@ -53,11 +44,7 @@
                     <MenuItem Header="Базовый каталог и прайс=листы"/>
                 </MenuItem>
                 <MenuItem Header="Кабинет">
-                    <MenuItem Header="Настройка главного меню"/>
-                    <MenuItem Header="Настройка системы"/>
                     <MenuItem Header="История изменений"/>
-                    <MenuItem Header="Баланс"/>
-
                     <MenuItem Header="Журнал операций"/>
                     <MenuItem Header="Статистика"/>
                     <MenuItem Header="Справка">
@@ -68,24 +55,34 @@
                         <MenuItem Header="Расположить окна каскадом"/>
                         <MenuItem Header="Расположить окна плиткой"/>
                     </MenuItem>
-                    <MenuItem Header="Выход"/>
                 </MenuItem>
+                <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" Margin="5,5,5,5"/>
+                <Button x:Name="exit" Content="Выход" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="32" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20" Margin="5,8,5,5"/>
             </Menu>
         </StackPanel>
         <TextBlock FontSize="16" Foreground="#DD000000" Text="Профиль Админа" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="550,-390,0,0"/>
         <Image Source="/Images/administrator.png" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="740,-390,0,0"/>
-        
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFC8C8C8" Width="800" Height="295" Margin="0,-45,0,0">
-            <TextBlock Text="Найти login:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
-            <TextBox x:Name="textBox1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="800" Height="31"/>
-            <TextBlock Text="Найти password:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
-            <TextBox x:Name="textBox2" Width="800" Height="31" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Text="Найти root:" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20"/>
-            <TextBox x:Name="textBox3" Width="800" Height="31" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Content="Найти профиль" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" Margin="5" FontSize="20"/>
-            <Button x:Name="exit" Content="Выход" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="32" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20" Margin="5"/>
-            <Button x:Name="change_theme" Content="Поменять тему" Click="change_theme_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" Margin="5"/>
+        <StackPanel Width="410" Height="315" Background="#FFC8C8C8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-390,-25,0,0">
+            <TextBlock Text="Найти пользователя" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="5,5,5,5"/>
+            <TextBlock Text="Найти login:" FontSize="20" HorizontalAlignment="Left" Margin="5,5,5,5"/>
+            <TextBox x:Name="textBox1" Width="410" Height="31" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5"/>
+            <TextBlock Text="Найти password:" FontSize="20" HorizontalAlignment="Left" Margin="5,5,5,5"/>
+            <TextBox x:Name="textBox2" Width="410" Height="31" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Найти root:" FontSize="20" HorizontalAlignment="Left" Margin="5,5,5,5"/>
+            <TextBox x:Name="textBox3" Width="410" Height="31" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5"/>
+            <Button Content="Найти пользователя" Click="Button_Click_1" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" Margin="5,5,5,5" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="410,35,0,0" Background="#FFC8C8C8" Width="390" Height="375">
+            <TextBlock Text="Меню Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+            <TextBlock Text="Ведите login:" Margin="5,5,5,0" FontSize="20"/>
+            <TextBox x:Name="txtLogin" Margin="5,5,5,5"/>
+            <TextBlock Text="Ведите password:" Margin="5,5,5,5" FontSize="20"/>
+            <TextBox x:Name="txtPassword" Margin="5,5,5,5"/>
+            <TextBlock Text="Ведите root:" Margin="5,5,5,5" FontSize="20"/>
+            <TextBox x:Name="txtRoot" Margin="5,5,5,5"/>
+            <Button Click="btnAdd_Click" Content="Добавить Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>
+            <Button Click="btnEdit_Click" Content="Редактировать Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>
+            <Button Click="btnDelete_Click" Content="Удалить Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>
+        </StackPanel>
     </Grid>
 </Page>

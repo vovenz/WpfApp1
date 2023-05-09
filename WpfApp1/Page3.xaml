@@ -18,5 +18,6 @@
         <Button Click="Button_Click" Content="Добавить" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" Foreground="#FF2766CE"/>
         <Button Click="Button_Click_1" Content="Назад" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" Foreground="#FF2766CE"/>
         <Button Content="Поменять тему" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,180,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" Foreground="#FF2766CE" Click="Button_Click_2"/>
+        
     </Grid>
 </Page>

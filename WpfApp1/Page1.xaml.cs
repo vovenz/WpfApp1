@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 using System.Xml.Serialization;
 using static WpfApp1.regin;
 
@@ -153,13 +154,24 @@ namespace WpfApp1
             }
             else
             {
+                ProductsGrid.IsEnabled = true;
+                ProductForm.Visibility = Visibility.Visible;
+                ProductForm.HorizontalAlignment = HorizontalAlignment.Center;
+                ProductForm.VerticalAlignment = VerticalAlignment.Center;
                 NameTextBox.Text = "";
                 QuantityTextBox.Text = "";
                 PriceTextBox.Text = "";
+                NameTextBox.BorderBrush = Brushes.Blue;
+                QuantityTextBox.BorderBrush = Brushes.Blue;
+                PriceTextBox.BorderBrush = Brushes.Blue;
+                NameTextBox.FontSize = 20;
+                QuantityTextBox.FontSize = 20;
+                PriceTextBox.FontSize = 20;
+                NameTextBox.Foreground = Brushes.White;
+                QuantityTextBox.Foreground = Brushes.White;
+                PriceTextBox.Foreground = Brushes.White;
+                ProductForm.Background = Brushes.Black;
             }
-
-            ProductsGrid.IsEnabled = false;
-            ProductForm.Visibility = Visibility.Visible;
         }
 
         private void HideProductForm()
@@ -191,8 +203,9 @@ namespace WpfApp1
             {
                 Storage.RemoveProduct(product);
 
-                _products = Storage.GetProducts();
+                _products.Remove(product);
 
+                ProductsGrid.ItemsSource = null;
                 ProductsGrid.ItemsSource = _products;
             }
         }
@@ -223,6 +236,5 @@ namespace WpfApp1
         {
             HideProductForm();
         }
-
     }
 }

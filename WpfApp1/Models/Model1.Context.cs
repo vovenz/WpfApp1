@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp1
+namespace WpfApp1.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.SqlClient;
-    using System.Windows;
-
-    public partial class DatabaseEntities4 : DbContext
+    
+    public partial class DatabaseEntities7 : DbContext
     {
-        public DatabaseEntities4()
-            :base("name=DatabaseEntities4")
+        public DatabaseEntities7()
+            : base("name=DatabaseEntities7")
         {
         }
     
@@ -27,8 +25,9 @@ namespace WpfApp1
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<products> products { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<admins> admins { get; set; }
         public virtual DbSet<users> users { get; set; }
     }
-
 }

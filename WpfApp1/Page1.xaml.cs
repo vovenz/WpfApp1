@@ -20,106 +20,33 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Serialization;
+using WpfApp1.Models;
 using static WpfApp1.regin;
 
 namespace WpfApp1
 {
-    
+
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
     /// </summary>
     public partial class Page1 : Page
     {
-        private List<Product> _products;
 
         public Page1()
-        { 
+        {
             InitializeComponent();
 
-            _products = Storage.GetProducts();
-
-            ProductsGrid.ItemsSource = _products;
+            Loaded += Page1_Loaded;
         }
 
-        public class Product
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            public string Name { get; set; }
-            public int Quantity { get; set; }
-            public double Price { get; set; }
+            ProductsGrid.ItemsSource = Class1.db.products.ToList();
         }
 
-        public class Storage
+        private void Page1_Loaded(object sender, RoutedEventArgs e)
         {
-            private const string FILE_NAME = @"C:\temp\products.xml";
-
-            public static List<Product> LoadProducts()
-            {
-                if (!File.Exists(FILE_NAME))
-                {
-                    return new List<Product>();
-                }
-
-                var serializer = new XmlSerializer(typeof(List<Product>));
-
-                using (var stream = File.OpenRead(FILE_NAME))
-                {
-                    return (List<Product>)serializer.Deserialize(stream);
-                }
-            }
-
-            public static void SaveProducts(List<Product> products)
-            {
-                var serializer = new XmlSerializer(typeof(List<Product>));
-
-                using (var stream = File.Create(FILE_NAME))
-                {
-                    serializer.Serialize(stream, products);
-                }
-            }
-
-            public static void AddProduct(Product product)
-            {
-                var products = LoadProducts();
-
-                var existingProduct = products.FirstOrDefault(p => p.Name == product.Name);
-
-                if (existingProduct != null)
-                {
-                    existingProduct.Quantity += product.Quantity;
-                    existingProduct.Price = product.Price;
-                }
-                else
-                {
-                    products.Add(product);
-                }
-
-                SaveProducts(products);
-            }
-
-            public static void RemoveProduct(Product product)
-            {
-                var products = LoadProducts();
-
-                var existingProduct = products.FirstOrDefault(p => p.Name == product.Name);
-
-                if (existingProduct != null)
-                {
-                    products.Remove(existingProduct);
-
-                    SaveProducts(products);
-                }
-            }
-
-            public static void EditProduct(Product product)
-            {
-                RemoveProduct(product);
-                AddProduct(product);
-            }
-
-            public static List<Product> GetProducts()
-            {
-                return LoadProducts();
-            }
+            ProductsGrid.ItemsSource = Class1.db.products.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -144,97 +71,32 @@ namespace WpfApp1
             change_class.isAction1 = !change_class.isAction1;
         }
 
-        private void ShowProductForm(Product product = null)
-        {
-            if (product != null)
-            {
-                NameTextBox.Text = product.Name;
-                QuantityTextBox.Text = product.Quantity.ToString();
-                PriceTextBox.Text = product.Price.ToString();
-            }
-            else
-            {
-                ProductsGrid.IsEnabled = true;
-                ProductForm.Visibility = Visibility.Visible;
-                ProductForm.HorizontalAlignment = HorizontalAlignment.Center;
-                ProductForm.VerticalAlignment = VerticalAlignment.Center;
-                NameTextBox.Text = "";
-                QuantityTextBox.Text = "";
-                PriceTextBox.Text = "";
-                NameTextBox.BorderBrush = Brushes.Blue;
-                QuantityTextBox.BorderBrush = Brushes.Blue;
-                PriceTextBox.BorderBrush = Brushes.Blue;
-                NameTextBox.FontSize = 20;
-                QuantityTextBox.FontSize = 20;
-                PriceTextBox.FontSize = 20;
-                NameTextBox.Foreground = Brushes.White;
-                QuantityTextBox.Foreground = Brushes.White;
-                PriceTextBox.Foreground = Brushes.White;
-                ProductForm.Background = Brushes.Black;
-            }
-        }
-
-        private void HideProductForm()
-        {
-            ProductsGrid.IsEnabled = true;
-            ProductForm.Visibility = Visibility.Collapsed;
-        }
-
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            ShowProductForm();
+            NavigationService.Navigate(new Page3());
         }
 
         private void EditProduct_Click(object sender, RoutedEventArgs e)
         {
-            var product = ProductsGrid.SelectedItem as Product;
-
-            if (product != null)
+            if (MessageBox.Show("Вы действительно хотите изменить товар?", "уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                ShowProductForm(product);
+                Class1.db.SaveChanges();
+                ProductsGrid.ItemsSource = Class1.db.products.ToList();
+                MessageBox.Show("Изменено!");
             }
+            Class1.db.SaveChanges();
         }
 
         private void RemoveProduct_Click(object sender, RoutedEventArgs e)
         {
-            var product = ProductsGrid.SelectedItem as Product;
-
-            if (product != null)
+            if (MessageBox.Show("Вы действительно хотите удалить товар?", "уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Storage.RemoveProduct(product);
-
-                _products.Remove(product);
-
-                ProductsGrid.ItemsSource = null;
-                ProductsGrid.ItemsSource = _products;
+                var CurrentClient = ProductsGrid.SelectedItem as products;
+                Class1.db.products.Remove(CurrentClient);
+                Class1.db.SaveChanges();
+                ProductsGrid.ItemsSource = Class1.db.products.ToList();
+                MessageBox.Show("Удалено!");
             }
-        }
-
-        private void SaveProduct_Click(object sender, RoutedEventArgs e)
-        {
-            var name = NameTextBox.Text;
-            var quantity = int.Parse(QuantityTextBox.Text);
-            var price = double.Parse(PriceTextBox.Text);
-
-            var product = new Product
-            {
-                Name = name,
-                Quantity = quantity,
-                Price = price
-            };
-
-            Storage.AddProduct(product);
-
-            _products = Storage.GetProducts();
-
-            ProductsGrid.ItemsSource = _products;
-
-            HideProductForm();
-        }
-
-        private void CancelProduct_Click(object sender, RoutedEventArgs e)
-        {
-            HideProductForm();
         }
     }
 }

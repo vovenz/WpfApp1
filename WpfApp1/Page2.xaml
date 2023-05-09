@@ -11,7 +11,7 @@
     <Grid Height="645" Width="1080" HorizontalAlignment="Center" VerticalAlignment="Center">
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="800" Margin="0,-390,0,0">
             <Menu Height="50" Width="800" Background="#FFC8C8C8" HorizontalAlignment="Center">
-                <MenuItem Header="Справочники">
+                <MenuItem Header="Справочники" FontSize="20">
                     <MenuItem Header="Базовый каталог товаров" >
                         <MenuItem Header="Товары"/>
                         <MenuItem Header="Атрибуты"/>
@@ -43,7 +43,7 @@
                     <MenuItem Header="Статьи"/>
                     <MenuItem Header="Базовый каталог и прайс=листы"/>
                 </MenuItem>
-                <MenuItem Header="Кабинет">
+                <MenuItem Header="Кабинет" FontSize="20">
                     <MenuItem Header="История изменений"/>
                     <MenuItem Header="Журнал операций"/>
                     <MenuItem Header="Статистика"/>
@@ -75,11 +75,11 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="410,35,0,0" Background="#FFC8C8C8" Width="390" Height="375">
             <TextBlock Text="Меню Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
             <TextBlock Text="Ведите login:" Margin="5,5,5,0" FontSize="20"/>
-            <TextBox x:Name="txtLogin" Margin="5,5,5,5"/>
+            <TextBox x:Name="txtLogin" Margin="5,5,5,5" FontSize="20"/>
             <TextBlock Text="Ведите password:" Margin="5,5,5,5" FontSize="20"/>
-            <TextBox x:Name="txtPassword" Margin="5,5,5,5"/>
+            <TextBox x:Name="txtPassword" Margin="5,5,5,5" FontSize="20"/>
             <TextBlock Text="Ведите root:" Margin="5,5,5,5" FontSize="20"/>
-            <TextBox x:Name="txtRoot" Margin="5,5,5,5"/>
+            <TextBox x:Name="txtRoot" Margin="5,5,5,5" FontSize="20"/>
             <Button Click="btnAdd_Click" Content="Добавить Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>
             <Button Click="btnEdit_Click" Content="Редактировать Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>
             <Button Click="btnDelete_Click" Content="Удалить Пользователя" Margin="5,5,5,5" Background="#FF4E4A4A" BorderBrush="#FFC8C8C8" FontSize="20"/>

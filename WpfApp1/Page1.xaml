@@ -25,35 +25,12 @@
             <TextBlock Text="Профиль" Height="30" Foreground="#FF2766CE" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-185,0,0,0" Background="#FF4E4A4A" FontSize="20" FontWeight="Bold"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5,5,0,5" FontSize="20" HorizontalAlignment="Left" Width="1070" Background="{x:Null}">
+        <DataGrid Grid.Row="1" Name="ProductsGrid" AutoGenerateColumns="False" Margin="5,5,0,5" FontSize="20" HorizontalAlignment="Left" Width="1070" Background="{x:Null}" BorderBrush="Black" Foreground="#FF675E5E">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Количество" Width="*" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Price}"/>
             </DataGrid.Columns>
         </DataGrid>
-
-        <StackPanel Name="ProductForm" Grid.Row="1" Visibility="Collapsed" Margin="5">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Наименование:" Margin="5" Foreground="White" Cursor="" />
-                <TextBox Name="NameTextBox" Width="200" Margin="5" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Количество:" Margin="5" Foreground="White" />
-                <TextBox Name="QuantityTextBox" Width="200" Margin="5" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Цена:" Margin="5" Foreground="White" />
-                <TextBox Name="PriceTextBox" Width="200" Margin="5" CaretBrush="#FF2766CE" SelectionBrush="#FF0060FF" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Button Content="Сохранить" Margin="5" Click="SaveProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" />
-                <Button Content="Отмена" Margin="5" Click="CancelProduct_Click" Background="#FF4E4A4A" BorderBrush="#FF2766CE" />
-            </StackPanel>
-        </StackPanel>
-
     </Grid>
 </Page>

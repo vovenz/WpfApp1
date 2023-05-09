@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 using static WpfApp1.regin;
 
 namespace WpfApp1
@@ -71,7 +72,7 @@ namespace WpfApp1
                                     string password = password_box.Password;
                                     string root = "Пользователь";
 
-                                    using (var DataBase = new DatabaseEntities4())
+                                    using (var DataBase = new DatabaseEntities7())
                                     {
 
                                         var isUserExists = DataBase.users.Any(u => u.login == login);

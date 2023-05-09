@@ -17,9 +17,9 @@
         <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="25" Margin="-195,-530,0,0"/>
         <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="165" Height="25" Margin="-190,-190,0,0"/>
         <Rectangle RenderTransformOrigin="0.5,0.5" RadiusX="17" RadiusY="17" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="195" Height="25" Margin="-165,140,0,0"/>
-        <Label Content="Введите логин:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="145" Margin="-200,-540,0,0"/>
-        <Label Content="Введите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="30" Margin="-194,-200,0,0"/>
-        <Label Content="Повторите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-170,135,0,0" Width="182" Height="31"/>
+        <Label Content="Введите логин:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="145" Margin="-200,-540,0,0"/>
+        <Label Content="Введите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="160" Height="35" Margin="-194,-200,0,0"/>
+        <Label Content="Повторите пароль:" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-170,135,0,0" Width="182" Height="35"/>
         <Button x:Name="reg" Click="reg_Click" Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-210,330,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"></Button>
         <Button x:Name="back" Click="back_Click" Content="Отмена" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="465,330,0,0" Background="#FF4E4A4A" BorderBrush="#FF2766CE" FontSize="20"></Button>
         <Button x:Name="change_theme" Content="Поменять тему" Background="#FF4E4A4A" Width="175" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="145,330,0,0" FontSize="20" Click="change_theme_Click"></Button>
